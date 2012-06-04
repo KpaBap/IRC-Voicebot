@@ -98,6 +98,11 @@ class IceSource(Thread):
         beep = self.beep               
         while 1:
             
+            # The shout module is a crashy piece of shit
+            # Do not try to pass it variables outside of the local scope
+            # Passing self.silence will cause an immediate segfault
+            # Also other things will cause a segfault. Good luck.
+            
             silence = self.silence[cur_chunk]
             #print "Current chunk is " + str(cur_chunk)
             if activeCount() < 3:
