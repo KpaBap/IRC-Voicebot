@@ -1,4 +1,4 @@
-The TXT2WAVE file is a BASH script that depends on eSpeak and Lame being installed.
+The TXT2MP3 file is a BASH script that depends on eSpeak and Lame being installed.
 It needs to be "chmod +x" and copied to /usr/bin - alternatively, the way it's called can be changed in icecastbot.py
 It's set to use the MBrola US1 voice as it sounds much better than the default eSpeak voices.
 
