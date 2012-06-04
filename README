@@ -1,0 +1,12 @@
+The TXT2WAVE file is a BASH script that depends on eSpeak and Lame being installed.
+It needs to be "chmod +x" and copied to /usr/bin - alternatively, the way it's called can be changed in icecastbot.py
+
+The bot itself depends on:
+Python IRC Library
+http://python-irclib.sourceforge.net/
+
+Shout Python is included in this repo, to install run:
+
+python setup.py install
+
+

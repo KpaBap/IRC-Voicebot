@@ -1,0 +1,5 @@
+#! /bin/bash
+aiff=`mktemp -t aiff.XXXXXXXXXX`;
+espeak -v mb-us1 -s 120 -w "$aiff"
+lame --quiet -f -b 48 --resample 22.05 "$aiff" -
+rm "$aiff"
