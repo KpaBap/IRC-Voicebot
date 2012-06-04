@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys
+import sys, tempfile
 from voicebot import *
 import shout
 import time
@@ -111,7 +111,13 @@ class IceSource(Thread):
             if speech_queue:
                 s = speech_queue.pop()
                 #print s
-                command = """echo %s | txt2mp3""" % str(s)
+                # create temp file to pass to espeak
+                f = tempfile.mkstemp()[1]
+                tmp = open(f,"w")
+                tmp.write(str(s))
+                tmp.close()
+                
+                command = """txt2mp3 %s""" % f
                 #print command
                 d = Popen(command,shell=True,stdout=PIPE,stderr=PIPE).communicate()[0]
                 self.broadcast.send(beep)
